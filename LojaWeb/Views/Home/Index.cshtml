@@ -1,0 +1,17 @@
+﻿@using LojaWeb.Helpers.HtmlHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Hello world!</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    @*Utilizando HtmlHelper para inserir um elemento no HTML pelo Backend*@
+    @DisplayVerdadeiroFalsoHtmlHelper.DisplayTrueFalse(true)
+    @DisplayVerdadeiroFalsoHtmlHelper.DisplayTrueFalse(false)
+
+    @*Utilizando TagHelper para inserir um elemento no HTML pelo Backend*@
+    @*Passando um valor da view para ser inserido novamente aqui*@
+    <nome-pessoa nome="Diego"></nome-pessoa>
+</div>

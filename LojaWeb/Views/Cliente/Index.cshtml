@@ -1,0 +1,57 @@
+﻿@*Recebendo uma lista de clientes, a view foi criada selecionado o "list" 
+para já receber o modelo em formato de lista. O controller irá passar uma lista na Action Index*@
+@model IEnumerable<LojaWeb.Models.ClienteViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div>
+    <div class="float-left align-middle">
+        <h1>Todos os clientes</h1>
+    </div>
+
+    <div class="float-right align-text-bottom">
+        <a class="btn btn-primary" asp-action="Create">Criar Cliente</a>
+    </div>
+</div>
+
+@*Chamando a partial view*@
+<partial name="_MensagensPartial"/>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Endereco)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Detailhes", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Deletar", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

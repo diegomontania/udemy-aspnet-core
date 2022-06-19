@@ -1,0 +1,42 @@
+﻿@{
+    //Mensagem de sucesso
+    string mensagemSucesso = "MensagemSucesso";
+    if (ViewData[mensagemSucesso] != null)
+    {
+        <div class="alert alert-success alert-dismissible">
+            <a class="close" data-dimiss="modal" href=# aria-hidden="true">&times;</a>
+            <strong>Sucesso : </strong>@ViewData[mensagemSucesso]
+        </div>
+    }  
+
+    //Mensagem de erro
+    string mensagemErro = "MensagemErro";
+    if (ViewData[mensagemErro] != null)
+    {
+        <div class="alert alert-danger alert-dismissible">
+            <a class="close" data-dimiss="alert" href=# aria-hidden="true">&times;</a>
+            <strong>Erro : </strong>@ViewData[mensagemErro]
+        </div>
+    }
+
+    //mensagem de informação
+    string mensagemInfo = "MensagemInfo";
+    if (ViewData[mensagemInfo] != null)
+    {
+        <div class="alert alert-info alert-dismissible">
+            <a class="close" data-dimiss="alert" href=# aria-hidden="true">&times;</a>
+            <strong>Informação : </strong>@ViewData[mensagemInfo]
+        </div>
+    }
+
+    //Mensagem de atencao
+    string mensagemAtencao = "MensagemAtencao";
+    if (ViewData[mensagemAtencao] != null)
+    {
+        <div class="alert alert-warning alert-dismissible">
+            <a class="close" data-dimiss="alert" href=# aria-hidden="true">&times;</a>
+            <strong>Atenção : </strong>@ViewData[mensagemAtencao]
+        </div>
+    }
+}
+

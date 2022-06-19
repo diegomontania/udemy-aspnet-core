@@ -1,0 +1,26 @@
+﻿@{
+    //aqui tambem esta utilizando ViewData, dessa vez diretamente da view
+    //o que pode ser ruim em muitos casos, valor setado diretamente na view
+    ViewData["Title"] = "Privacy Policy";
+}
+
+@*<h2>Exibindo valor pela ViewBag: @ViewBag.NomePeloViewBag</h2>
+<br />
+
+<h2>Exibindo valor pela ViewData: @ViewData["NomePeloViewData"]</h2>
+<br />*@
+
+@*Chamando a partial view*@
+<partial name="_MensagensPartial"/>
+
+@*fazendo o form receber da Action "Privacy"*@
+@*Enviando as informações de maneira simples*@
+<form action="Privacy" method="post">
+
+    @*campos*@
+    Id <input type="text" name="Id"/>
+    Nome <input type="text" name="Nome"/>
+
+    @*botao de enviar*@
+    <input type="submit" value="Salvar" />
+</form>
