@@ -33,6 +33,15 @@
                 <span asp-validation-for="Endereco" class="text-danger"></span>
             </div>
             <div class="form-group">
+                @*criando select com select2*@
+                <select class="js-example-basic-single form-control" name="estados">
+                  <option value="Rj">Rio de Janeiro</option>
+                  <option value="Sp">São Paulo</option>
+                  <option value="Mg">Minas Gerais</option>
+                </select>
+            </div>
+
+            <div class="form-group">
                 <input type="submit" class="btn btn-success" value="Salvar"/>
             </div>
         </form>
@@ -42,4 +51,17 @@
 <div>
     <a class="btn btn-secondary" asp-action="Index">Voltar</a>
 </div>
+
+@*dentro dessa tag, faz o script aguardar o carregamento dos scripts em ordem
+  para depois carregar este trecho aqui*@
+@section Scripts{
+
+@*chamando script do select2*@
+<script>
+    // In your Javascript (external .js resource or <script> tag)
+    $(document).ready(function() {
+        $('.js-example-basic-single').select2();
+    });
+</script>
+}
 

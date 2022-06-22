@@ -19,7 +19,8 @@ para já receber o modelo em formato de lista. O controller irá passar uma list
 @*Chamando a partial view*@
 <partial name="_MensagensPartial"/>
 
-<table class="table">
+@*utilizando datables.net na tabela html*@
+<table class="table" id="minha-tabela">
     <thead>
         <tr>
             <th>
@@ -31,7 +32,9 @@ para já receber o modelo em formato de lista. O controller irá passar uma list
             <th>
                 @Html.DisplayNameFor(model => model.Endereco)
             </th>
-            <th></th>
+            <th>
+                Ações
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -55,3 +58,20 @@ para já receber o modelo em formato de lista. O controller irá passar uma list
 }
     </tbody>
 </table>
+
+@*dentro dessa tag, faz o script aguardar o carregamento dos scripts em ordem
+  para depois carregar este trecho aqui*@
+@section Scripts{
+
+@*chamando script do datatables.net*@
+<script>
+    // In your Javascript (external .js resource or <script> tag)
+    $(document).ready(function () {
+		$('#minha-tabela').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.12.1/i18n/pt-BR.json"
+            }
+        });
+	});
+</script>
+}

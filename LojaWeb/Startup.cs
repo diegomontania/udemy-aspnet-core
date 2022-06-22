@@ -20,7 +20,7 @@ namespace LojaWeb
         {
             services.AddControllersWithViews();
 
-            //configurando automapper
+            //configurando automapper para iniciar na aplicacao
             services.AddAutoMapper(typeof(Startup));
         }
 
